@@ -1,0 +1,65 @@
+:root {
+    --primary: #b0d4d6;
+    --secondary: #9caea9;
+    --tertiary: #788585;
+    --light-dark: #6f6866;
+    --dark: #38302e;
+    --border-radius: .3rem;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    background-color: var(--dark);
+}
+body {
+    background-color: var(--primary);
+}
+.wrapper {
+    align-content: center;
+    padding: 10em 10em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+.app-title {
+    font-size: 3rem;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: var(--border-radius);
+    box-shadow: 6px 5px var(--light-dark);
+  }
+
+  .card {
+    margin: 0 0 20px 0;
+    border: 3px solid var(--dark);
+    border-radius: var(--border-radius);
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  .card-header {
+    color: var(--primary);
+    background-color: var(--dark);
+    /* padding: 2.5%; */
+    /* border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0; */
+  }
+  
+  .card-body {
+    padding: 2.5%;
+  }
