@@ -18,7 +18,7 @@ First, clone the repository into the desired directory. Next, navigate to that d
 
 ## Usage
 
-After successful installation, run the command 'node index.js' to run the program. You will be prompted to fill out information for one team manager and any number of Engineers and Interns. Once you have finished filling out the prompts and select that you are finished adding team members, an index.html file will have been written to the /dist/ folder alongside its style.css file. Finally, add these two files to the directory where you intend to host the files for your team site and publish it to the internet. 
+First, run the command 'npm run test' in order to check for successful installation. After verifying a successful installation, run the command 'node index.js' to run the program. You will be prompted to fill out information for one team manager and any number of Engineers and Interns. Once you have finished filling out the prompts and select that you are finished adding team members, an index.html file will have been written to the /dist/ folder alongside its style.css file. Finally, add these two files to the directory where you intend to host the files for your team site and publish it to the internet. 
 
 ## Questions
 
