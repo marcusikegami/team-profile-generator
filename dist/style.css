@@ -35,6 +35,9 @@ h6 {
   color: var(--dark);
   line-height: 1.25;
 }
+p {
+  font-size: large;
+}
 .app-title {
     font-size: 3rem;
     background-color: var(--primary);
@@ -50,7 +53,11 @@ h6 {
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
     padding: 0;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.605);
+    display: flex;
+    width: 30em;
+    height:auto
+    
   }
   
   .card-header {
@@ -61,5 +68,14 @@ h6 {
   }
   
   .card-body {
-    padding: 2.5%;
+    display: flex;
+    margin: 2.5%;
+    flex-direction: column;
+  }
+  .card p {
+    padding: 0.5em;
+    font-weight: 600;
+    /* border: 1px solid var(--dark) ; */
+    border-style: outset;
+    background-color: white;
   }
