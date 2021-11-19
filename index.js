@@ -5,8 +5,12 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const { addEngineer, addIntern, addManager, generatePage } = require('./src/pagetemplate');
 const teamMembers = [];
+
+let employeeCards = "";
 //
+
 
 const managerPrompt = () => {
     return inquirer.prompt([
@@ -38,6 +42,7 @@ const managerPrompt = () => {
 }
 
 const promptUser = () => {
+    // console.log(teamMembers);
     return inquirer.prompt([
         {
             type: 'list',
@@ -46,7 +51,7 @@ const promptUser = () => {
             choices: ['Engineer', 'Intern', 'Finished adding team members']
         }
     ]).then(data => {
-        console.log(teamMembers);
+        
         switch(data.memberRole) {
             case 'Engineer':
                 engineerPrompt();
@@ -54,8 +59,9 @@ const promptUser = () => {
             case 'Intern':
                 internPrompt();
                 break;
-            default:
+            case 'Finished adding team members':
                 generateHTML();
+            
         }
     })
 };
@@ -118,10 +124,33 @@ const internPrompt = () => {
     })
 }
 
+
+
 function generateHTML() {
+    
     teamMembers.forEach(member => {
-        console.log(member);
-    })
+        switch (member.role) {
+            case 'Manager':
+                console.log('manager reached');
+                let manager = addManager(member);
+                addManager(member);
+                employeeCards += manager;
+                break;
+            case 'Engineer':
+                let engineer = addEngineer(member);
+                addEngineer(member);
+                employeeCards += engineer;
+                break;
+            case 'Intern':
+                let intern = addIntern(member)
+                addIntern(member);
+                employeeCards += intern;
+                break;
+            
+        }
+    });
+    console.log(employeeCards);
+    generatePage(employeeCards);
 };
 
 managerPrompt()
