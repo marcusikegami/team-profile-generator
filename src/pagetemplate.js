@@ -31,11 +31,11 @@ const html = `<!DOCTYPE html>
         if(err) {
             reject(err);
             return;
-        }
-        resolve({
-            ok:true,
-            message: 'index.html created!'
-        });
+        }else{
+            
+            console.log('index.html created!')
+            console.log('NOTE: the index.html file along with the style.css file are located in the "dist" directory.')
+        };
     });
 };
 
@@ -46,8 +46,8 @@ function addEngineer(member) {
         <h3 class="card-header text-uppercase">Engineer</h3>
         <div class="card-body">
             <p>ID: ${member.id}</p>
-            <p>Email: <a href="mailto:${memeber.email}>${member.email}<a></p>
-            <p>GitHub: <a href="https://github.com/${member.github}>${member.github}</a></p>
+            <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
+            <p>GitHub: <a href="https://github.com/${member.github}">${member.github}</a></p>
         </div>
     </div>
     
@@ -62,7 +62,7 @@ function addIntern(member) {
     <h3 class="card-header text-uppercase">Intern</h3>
         <div class="card-body">
             <p>ID: ${member.id}</p>
-            <p>Email: <a href="mailto:${memeber.email}>${member.email}<a></p>
+            <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
             <p>School: ${member.school}</p>
         </div>
     </div>
@@ -72,14 +72,13 @@ function addIntern(member) {
 }
 
 function addManager(member) {
-    console.log('endpoint reached');
 const manager = 
 `<div class="card">
     <h3 class="card-header text-uppercase">${member.name}</h3>
     <h3 class="card-header text-uppercase">Manager</h3>
     <div class="card-body">
         <p>ID: ${member.id}</p>
-        <p>Email: <a href="mailto:${memeber.email}>${member.email}<a></p>
+        <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
         <p>Office Number: ${member.officNum}</p>
     </div>
 </div>

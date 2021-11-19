@@ -1,7 +1,4 @@
 const inquirer = require('inquirer');
-const Choice = require('inquirer/lib/objects/choice');
-const Choices = require('inquirer/lib/objects/choices');
-const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -9,7 +6,7 @@ const { addEngineer, addIntern, addManager, generatePage } = require('./src/page
 const teamMembers = [];
 
 let employeeCards = "";
-//
+
 
 
 const managerPrompt = () => {
@@ -42,7 +39,7 @@ const managerPrompt = () => {
 }
 
 const promptUser = () => {
-    // console.log(teamMembers);
+
     return inquirer.prompt([
         {
             type: 'list',
@@ -131,7 +128,6 @@ function generateHTML() {
     teamMembers.forEach(member => {
         switch (member.role) {
             case 'Manager':
-                console.log('manager reached');
                 let manager = addManager(member);
                 addManager(member);
                 employeeCards += manager;
@@ -149,7 +145,6 @@ function generateHTML() {
             
         }
     });
-    console.log(employeeCards);
     generatePage(employeeCards);
 };
 
